@@ -1,0 +1,5 @@
+/* pages/taskList/taskList.wxss */
+.van-cell__title, .van-cell__value  {
+  flex: none!important;
+  margin-right: 20rpx;
+}

@@ -1,0 +1,44 @@
+<view class="role-details-box">
+<import src ="../../components/header/header.wxml"/>
+<template is="msgItem" data="{{name:'发布任务'}}"/>
+<form bindsubmit="formSubmit" >
+	<view class="role-content">
+		<view class="role-content-item">
+			<view class="role-label">任务名称 </view>
+			<view class="role-text"><input name="name" class="weui-input" placeholder="xxx" /></view>
+		</view>
+		<view class="role-content-item">
+			<view class="role-label">任务介绍  </view>
+			<view class="role-text"><input name="desc" class="weui-input" placeholder="xxx" /></view>
+		</view>
+		<view class="role-content-item">
+			<view class="role-label">任务时间  </view>
+			<view class="role-text"><input name="taskTime" class="weui-input" placeholder="xxx" /></view>
+		</view>
+		<view class="role-content-item">
+			<view class="role-label">任务地点 </view>
+			<view class="role-text"><input name="position" class="weui-input" placeholder="xxx" /></view>
+		</view>
+		<view class="role-content-item">
+			<view class="role-label">角色要求 </view>
+			<view class="role-text"><input name="skill" class="weui-input" placeholder="xxx" /></view>
+		</view>
+		<view class="role-content-item" >
+			<view class="role-label"  style="width:250rpx">任务有效期限</view>
+			<view class="role-text"><input name="validateTime" class="weui-input" placeholder="xxx" /></view>
+		</view>
+    	<view class="role-content-item">
+			<view class="role-label" style="width:350rpx">联系人/机构名称 </view>
+			<view class="role-text"><input name="contact" class="weui-input" placeholder="xxx" /></view>
+		</view>
+    	<view class="role-content-item" style="border:none">
+			<view class="role-label">联系方式 </view>
+			<view class="role-text"><input name="phone" class="weui-input" placeholder="xxx" /></view>
+		</view>
+		<input name="createById" value="{{createById}}" hidden="true" />
+	</view>
+	<view class="button-box">
+		<button class="button-btn" formType="submit">提交</button>
+	</view>
+</form>
+</view>

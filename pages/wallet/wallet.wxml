@@ -1,0 +1,29 @@
+<view class="role-details-box">
+	<import src="../../components/header/header.wxml" />
+	<template is="msgItem" data="{{name:'我的钱包'}}" />
+	<view class="content-body">
+		<view>
+			<text class="wallet-title">余额(元)</text>
+			<view class="wallet-price">2200.00</view>
+		</view>
+		<view>
+			<van-collapse value="{{ activeNames }}" bind:change="onChange">
+				<view class="item-list">
+					<van-collapse-item title="有赞微商城" name="1">
+						提供多样店铺模板，快速搭建网上商城
+					</van-collapse-item>
+				</view>
+				<view class="item-list">
+					<van-collapse-item title="有赞零售" name="2">
+						网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
+					</van-collapse-item>
+				</view>
+				<view class="item-list">
+					<van-collapse-item title="有赞美业" name="3">
+						线上拓客，随时预约，贴心顺手的开单收银
+					</van-collapse-item>
+				</view>
+			</van-collapse>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,7 @@
+<template name="msgItem">
+ <view class="role-header">
+		<!--背景图 -->
+		<image src='../../images/public-header.png' class="public-bac"></image>
+		<view class="page-title">{{name}}</view>
+  </view>
+</template>

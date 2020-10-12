@@ -1,0 +1,22 @@
+/* pages/wallet/wallet.wxss */
+.content-body {
+  margin-top: -120px;
+  padding-left: 60rpx;
+  padding-right: 60rpx;
+  color: #666666;
+}
+
+.wallet-title {
+  font-size: 42rpx;
+}
+
+.wallet-price {
+  font-size: 96rpx;
+}
+
+.item-list {
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+  background: #fff;
+  padding: 0 20rpx;
+}

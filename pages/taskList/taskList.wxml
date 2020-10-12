@@ -1,0 +1,17 @@
+<view class="role-details-box">
+  <import src="../../components/header/header.wxml" />
+  <template is="msgItem" data="{{name:'任务详情'}}" />
+  <view class="content-box">
+    <van-cell-group>
+      <van-cell title="任务状态" value="进行中/已完成" />
+      <van-cell title="任务名称" value="xxxx" />
+      <van-cell title="任务介绍" value="xxxx" />
+      <van-cell title="任务时间" value="xxxx" />
+      <van-cell title="任务地点" value="xxxx" />
+      <van-cell title="角色要求" value="xxxx" />
+      <van-cell title="任务有效期限" value="xxxx" />
+      <van-cell title="联系人/机构名称" value="xxxx" />
+      <van-cell title="联系方式" value="xxxx" />
+    </van-cell-group>
+  </view>
+</view>

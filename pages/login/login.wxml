@@ -1,0 +1,23 @@
+<view class="login-box">
+  <image src="../../images/icon/fastMail.png"></image>
+  <view class="login-text">
+    <view>申请获取一下权限</view>
+    <view class="text-gray">获取您的公开信息（昵称，头像等）</view>
+  </view>
+  <van-button round="true" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo" type="primary">授权登录
+  </van-button>
+  <van-popup class="van-popup" show="{{ show }}" bind:close="onClose">
+    <view class="van-tip">
+      <view class="van-tip-body">
+        <text class="van-tip-title">提示</text>
+        <view class="van-tip-content">
+          您点击了拒绝授权，将无法进入小程序，请授权之后再进入
+        </view>
+      </view>
+      <view class="van-tip-foot">
+        <navigator class="foot-item" open-type="exit" target="miniProgram">取消授权</navigator>
+        <view style="border-left:0;color:red" bindtap="closeShow" class="foot-item">重新授权</view>
+      </view>
+    </view>
+  </van-popup>
+</view>

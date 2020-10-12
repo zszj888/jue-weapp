@@ -1,0 +1,55 @@
+/* pages/login/login.wxss */
+.content-text{
+  text-align: center;
+  padding: 40rpx 0;
+}
+.login-box{
+  text-align: center;
+  padding: 0 80rpx;
+  font-size: 36rpx;
+}
+.login-text{
+  text-align: left;
+  margin-top: 100rpx;
+  margin-bottom: 100rpx;
+}
+.login-box image{
+  width: 200rpx;
+  margin-top: 100rpx;
+  height: 200rpx;
+}
+.van-tip{
+  width: 650rpx;
+  height: 408rpx;
+  border-radius: 40rpx;
+}
+.van-popup{
+  border-radius: 40rpx;
+}
+.foot-item{
+  flex: 1;
+  border: 1rpx solid #ddd;
+  padding: 20rpx;
+  border-bottom: 0;
+}
+
+.van-tip-foot{
+  display: flex;
+  padding-top: 40rpx;
+}
+.van-tip-content{
+  text-align: left;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.van-tip-body{
+  padding: 40rpx;
+}
+
+.text-gray{
+  color: #666;
+  margin-top: 20rpx;
+}
+.van-button--primary{
+  width: 80%!important;
+}

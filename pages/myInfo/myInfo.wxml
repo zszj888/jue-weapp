@@ -1,0 +1,49 @@
+<view class="role-details-box">
+	<import src="../../components/header/header.wxml" />
+	<template is="msgItem" data="{{name:'个人信息'}}" />
+	<form bindsubmit="formSubmit">	
+	 <view class="role-content">
+			<view class="role-content-item">
+				<view class="role-label">昵称 </view>
+				<view class="role-text"><input name="nick_name" class="weui-input" placeholder="xxx" value="{{user.nick_name}}"/> </view>
+			</view>
+			<view class="role-content-item">
+				<view class="role-label">性别 </view>
+				<view class="role-text"><input name="sex" class="weui-input" placeholder="xxx"  value="{{user.sex}}"/></view>
+			</view>
+			<view class="role-content-item">
+				<view class="role-label">生日 </view>
+				<view class="role-text"><input name="birthda_day" class="weui-input" placeholder="xxx"  value="{{user.birthda_day}}"/></view>
+			</view>
+			<view class="role-content-item">
+				<view class="role-label">身高 </view>
+				<view class="role-text"><input name="height" class="weui-input" placeholder="cm"  value="{{user.height}}"/></view>
+			</view>
+			<view class="role-content-item">
+				<view class="role-label">体重 </view>
+				<view class="role-text"><input name="weight" class="weui-input" placeholder="kg"  value="{{user.weight}}"/></view>
+			</view>
+		</view>
+		<view class="content-flex">
+			<view class="content-flex-item">
+				<view class="role-label">才艺</view>
+				<view class="role-text"><input name="talents" class="weui-input" placeholder="xxx"  value="{{user.talents}}"/></view>
+			</view>
+		</view>
+		<view class="content-flex">
+			<view class="content-flex-item">
+				<view class="role-label">出演信息</view>
+				<view class="role-text"><input name="castHistory" class="weui-input" placeholder="xxx"  value="{{user.castHistory}}"/></view>
+			</view>
+		</view>
+		<view class="content-flex">
+			<view class="content-flex-item">
+				<view class="role-label">短视频</view>
+				<view class="role-text"><input name="shortVideoUrl" class="weui-input" placeholder="xxx"  value="{{user.shortVideoUrl}}"/></view>
+			</view>
+		</view>
+		<view class="button-box">
+			<button class="button-btn" formType="submit">保存</button>
+		</view>
+	</form>
+</view>

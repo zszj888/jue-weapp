@@ -1,0 +1,50 @@
+<view class="role-details-box">
+	<view class="role-header">
+		<!--背景图 -->
+		<image src='../../images/public-header.png' class="public-bac"></image>
+		<view class="page-title">角色详情</view>
+	</view>
+	<view class="role-content">
+		<view class="role-content-item">
+      <view class="role-label">姓名</view>
+      <view class="role-text">{{queryData.name}}</view>
+    </view>
+		<view class="role-content-item">
+      <view class="role-label">年龄</view>
+      <view class="role-text">{{queryData.age}}</view>
+    </view>
+		<view class="role-content-item">
+      <view class="role-label">身高</view>
+      <view class="role-text">{{queryData.height || ''}}</view>
+    </view>
+		<view class="role-content-item">
+      <view class="role-label">体重</view>
+      <view class="role-text">{{queryData.weight}}</view>
+    </view>
+		<view class="role-content-item">
+      <view class="role-label">才艺</view>
+      <view class="role-text">{{queryData.skill || ''}}</view>
+    </view>
+		<view class="role-content-item">
+      <view class="role-label">出演信息</view>
+      <view class="role-text">{{queryData.showInfo}}</view>
+    </view>
+    <view class="role-content-img">
+      <view class="role-label-1">个人图片</view>
+      <view class="role-box" >
+        <view wx:for="{{queryData.imgList}}"   wx:key='index' class="img-box">
+          <image src='{{item}}' bindtap='previewImage' data-src='{{item}}' class='img'></image> 
+        </view>
+      </view>
+    </view>
+    <view class="role-content-video">
+      <view class="role-label-1">短视频</view>
+      <view class="role-box">短视频</view>
+    </view>
+    <view class="btn-box">
+    <!-- 下单成功后，这里改成联系客服催单 -->
+      <view class="btn">联系客服</view>
+    </view>
+	</view>
+   
+</view>

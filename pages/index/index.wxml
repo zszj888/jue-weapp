@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="role-header">
+    <!--背景图 -->
+    <image src='../../images/public-header.png' class="public-bac"></image>
+    <view class="page-title">角色大厅</view>
+    <!-- 搜索框 -->
+    <view class="search-box">
+      <input class="search-input" maxlength="10" placeholder="请输入您要搜索的信息" bindinput="onInput"/>
+      <view class="search-btn" bindtap="search">
+        <image src="../../images/search.png" mode="scaleToFill"></image>
+      </view>
+    </view>
+    <!-- tab栏 -->
+    <view class="tabs">
+     <view class="tab-item {{currentTabIndex === index ? 'active-tab' : ''}}" wx:for="{{tabList}}" wx:key="index" wx:for-index="index" data-index="{{index}}" bindtap="changeTab" data-item="{{item}}">
+      {{item}}
+    </view>
+    </view>
+  </view>
+  <view class="role-list">
+    <view class="page-section-spacing">
+        <scroll-view scroll-y="true" style="height: {{scrollH}}px;"  bindscrolltolower="lower" lower-threshold="100">
+          <view wx:if="{{roleList.length > 0}}">
+            <view  wx:for="{{roleList}}" wx:key="index" wx:for-index="index" wx:for-item="item" bindtap="toDetails" data-item="{{item}}" class="scroll-view-item">
+              <view class="view-left">
+                <image src="{{item.imgUrl}}"></image>
+              </view>
+              <view class="view-right">
+                <view class="view-right-1">{{item.name}}</view>
+                <view class="view-right-2">
+                  <view class="view-right-sex">{{item.sex == 0 ? '女' : '男'}}</view>
+                  <view class="view-right-skill">{{item.skill}}</view>
+                </view>
+                <view class="collection">
+                  <image src="{{item.collection ? '../../images/collection.png': '../../images/un-collection.png'}}" class="collection-icon" data-index="{{index}}" catchtap="collectionUser" data-id="{{item.id}}"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="no-data" wx:if="{{roleList.length == 0}}">暂无数据</view>
+        </scroll-view>
+      </view>
+  </view>
+</view>

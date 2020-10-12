@@ -1,0 +1,47 @@
+<view class="role-details-box">
+	<view class="role-header">
+		<!--背景图 -->
+		<image src='../../images/public-header.png' class="public-bac"></image>
+		<view class="page-title">任务详情</view>
+	</view>
+	<view class="role-content">
+		<view class="role-content-item">
+			<view class="role-label">任务名称</view>
+			<view class="role-text">{{task.name}}</view>
+		</view>
+		<view class="role-content-item">
+			<view class="role-label">任务介绍</view>
+			<view class="role-text">{{task.desc}}</view>
+		</view>
+		<view class="role-content-item">
+			<view class="role-label">任务时间</view>
+			<view class="role-text">{{task.taskTime}}</view>
+		</view>
+		<view class="role-content-item">
+			<view class="role-label">任务地点</view>
+			<view class="role-text">{{task.remrks}}</view>
+		</view>
+		<view class="role-content-item">
+			<view class="role-label">角色要求</view>
+			<view class="role-text">{{task.skill}}</view>
+		</view>
+		<view class="role-content-item">
+			<view class="role-label">任务有效期限</view>
+			<view class="role-text">{{task.validateTime}}</view>
+		</view>
+		<view class="role-content-item">
+			<view class="role-label">机构名称</view>
+			<view class="role-text">{{task.contact}}</view>
+		</view>
+		<view class="role-content-item">
+			<view class="role-label">联系方式</view>
+			<view class="role-text">{{task.phone}}</view>
+		</view>
+		<view class="role-content-item">
+			<view class="role-text" hidden="true">{{task.id}}</view>
+		</view>
+		<view class="button-box">
+			<button class="button-btn">申请参与</button>
+		</view>
+	</view>
+</view>

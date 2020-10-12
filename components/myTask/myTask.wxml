@@ -1,0 +1,7 @@
+<template name="task">
+ <view class="pages-header">
+		<view bindtap="toDetails" id="{{item.id}}" class="page-title" data-item="{{item}}">
+      <van-cell center title="{{item.name}}" value="{{item.status}}" label="{{item.desc}}" is-link />
+    </view>
+  </view>
+</template>

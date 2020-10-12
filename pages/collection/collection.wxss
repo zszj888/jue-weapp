@@ -1,0 +1,50 @@
+/* pages/collection/collection.wxss */
+
+.my-collection-title{
+  display: flex;
+  padding-bottom: 20rpx;
+}
+.my-collection-title text{
+  flex: 1;
+  text-align: center;
+  padding-bottom: 10rpx;
+  z-index: 9999;
+}
+.my-collection-title text.active{
+  border-bottom: 6rpx solid #FFBB34;
+}
+.radio-group{
+  display: flex;
+}
+.radio-item{
+  margin-left: 40rpx;
+}
+.flex-items{
+  display: flex;
+  background-color: #fff;
+  border-radius: 60rpx;
+  padding: 40rpx;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40rpx;
+}
+.flex-items image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.item-list{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+  flex: 2;
+  text-align: left;
+}
+.item-list .content,.item-list .title{
+  color:#7E7E7E ;
+  text-align: left;
+}
+.item-list .title{
+  font-size: 46rpx;
+  margin-bottom: 20rpx;
+}

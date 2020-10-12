@@ -1,0 +1,25 @@
+<view class="role-details-box">
+  <import src="../../components/header/header.wxml" />
+  <import src="../../components/myTask/myTask.wxml" />
+  <template is="msgItem" data="{{name:'全部任务'}}" />
+  <view class="content-box">
+    <van-tabs active="{{ active }}" bind:change="onChange">
+      <van-tab title="已接受">
+        <block wx:for="{{list}}" wx:key="id">
+          <template is="task" data="{{item}}" />
+        </block>
+      </van-tab>
+      <van-tab title="已发布">
+        <van-radio-group style="display:flex;padding-top:30rpx" value="{{ radio }}" bind:change="radioChange">
+          <van-radio name="1" checked-color="#FDBD2F">已付款</van-radio>
+          <van-radio name="2" checked-color="#FDBD2F">进行中</van-radio>
+          <van-radio name="3" checked-color="#FDBD2F">待确认</van-radio>
+        </van-radio-group>
+        <template is="task" data="{{type:'0'}}" />
+      </van-tab>
+      <van-tab title="待确认">
+        <template is="task" data="{{type:'0'}}" />
+      </van-tab>
+    </van-tabs>
+  </view>
+</view>

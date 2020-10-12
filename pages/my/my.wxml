@@ -1,0 +1,45 @@
+<view class="container">
+ <view class="role-header">
+		<!--背景图 -->
+		<image src='../../images/public-header.png' class="public-bac"></image>
+		<view class="page-title">我的</view>
+    <view class="auto-box">
+      <image src="{{userInfo.nickName ? userInfo.avatarUrl : '../../images/default-user.png' }}" class="default-user"></image>
+    </view>
+    <view class="user-info">
+      <text wx:if="userInfo.nickName">{{userInfo.nickName}}</text>
+      <text wx:else>点击授权登录</text>
+    </view>
+    <view class="detail-user-info">
+      <navigator url="/pages/myInfo/myInfo">查看更多个人资料 ></navigator>
+    </view>
+	</view>
+  <!-- 菜单列表 -->
+  <view class="my-list">
+    <view class="my-list-item" wx:for="{{myList}}" wx:key="index" data-item='{{item}}' bindtap="toPages">
+      <view class="list-item-left">
+        <image src="{{item.icon}}"></image>
+        <text class="item-text">{{ item.name }}</text>
+      </view>
+      <view class="list-item-right">
+        <image src="../../images/Path.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+ <!-- <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+      size="default"
+    ></button> -->
+      <!-- 上传图片 -->
+  <!-- <view class="uploader">
+    <view class="uploader-text" bindtap="doUpload">
+      <text>上传图片</text>
+    </view>
+    <view class="uploader-container" wx:if="{{imgUrl}}">
+      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
+  </view> -->
