@@ -1,7 +1,7 @@
 <view class="role-details-box">
   <import src="../../components/header/header.wxml" />
   <import src="../../components/myTask/myTask.wxml" />
-  <template is="msgItem" data="{{name:'全部任务'}}" />
+  <template is="msgItem" data="{{name:'我的角色'}}" />
   <view class="content-box">
     <van-tabs active="{{ active }}" bind:change="onChange">
       <van-tab title="已发布">
@@ -14,7 +14,7 @@
           <template is="task" data="{{item}}" />
         </block>
       </van-tab>
-      <van-tab title="进行中">
+      <van-tab title="已接受">
         <block wx:for="{{list}}" wx:key="id">
           <template is="task" data="{{item}}" />
         </block>
@@ -24,14 +24,13 @@
           <template is="task" data="{{item}}" />
         </block>
       </van-tab>
-
+     
       <van-tab title="已申请">
         <block wx:for="{{list}}" wx:key="id">
           <template is="task" data="{{item}}" />
         </block>
       </van-tab>
-      
-      
+
     </van-tabs>
   </view>
 </view>

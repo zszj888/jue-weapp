@@ -19,7 +19,7 @@
 		</view>
 		<view class="role-content-item">
 			<view class="role-label">任务地点</view>
-			<view class="role-text">{{task.remrks}}</view>
+			<view class="role-text">{{task.position}}</view>
 		</view>
 		<view class="role-content-item">
 			<view class="role-label">角色要求</view>
@@ -38,10 +38,41 @@
 			<view class="role-text">{{task.phone}}</view>
 		</view>
 		<view class="role-content-item">
-			<view class="role-text" hidden="true">{{task.id}}</view>
+			<view class="role-label">演出总费用(RMB)</view>
+			<view class="role-text">{{task.fee}}</view>
 		</view>
-		<view class="button-box">
-			<button class="button-btn">申请参与</button>
+		<view class="role-text" hidden="true">{{task.id}}</view>
+
+		<view class="button-box" wx:if="{{task.status == '已完成'}}">
+			<button class="button-btn" disabled="{{true}}">任务已完成</button>
 		</view>
+
+		<view class="btn-box" wx:elif="{{task.remrks == '申请'}}">
+			<button class="button-btn" data-taskid="{{task.id}}" disabled="{{true}}">{{task.status}}</button>
+		</view>
+		<view class="button-box" wx:elif="{{task.status == '进行中' && task.showExt}}">
+			<button class="button-btn" bindtap="confirmTask" data-taskid="{{task.id}}">确认已完成</button>
+		</view>
+		<view class="button-box" wx:elif="{{task.status == '进行中'}}">
+			<button class="button-btn" disabled="{{true}}">进行中</button>
+		</view>
+		<view wx:elif="{{task.status == '待确认' && task.showExt}}">
+			<view class="role-content-item" wx:for="{{applyList}}" wx:key="*this">
+				<view class="role-label">参与人</view>
+				<view class="role-url" bindtap="toUserDetail" data-userid="{{item}}">查看</view>
+				<button class="button-btn" disabled="{{disable}}" data-userid="{{item}}" bindtap="confirmPay"
+					data-taskid="{{task.id}}">征用并付款</button>
+			</view>
+		</view>
+		<view class="button-box"
+			wx:elif="{{(task.status == '已发布' ||task.status == '待确认') && task.createById != currentUserId }}">
+			<button class="button-btn confirm-pay" bindtap="applyTask" data-taskid="{{task.id}}">申请参与</button>
+		</view>
+		<view class="btn-box"
+			wx:elif="{{(task.status == '已发布' || task.status == '待确认') && task.createById == currentUserId }}">
+			<button class="btn" data-roleid="{{task.id}}" disabled="{{true}}">等待参与</button>
+		</view>
+
+		
 	</view>
 </view>

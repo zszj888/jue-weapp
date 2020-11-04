@@ -7,7 +7,7 @@ Page({
   onLoad() {
     var current = http.currentUser()
     console.log('onLoad - current',current)
-    if(typeof(current)!='undefined'){
+    if(typeof current != 'undefined'){
       wx.switchTab({
         url: '/pages/index/index'
       })
@@ -21,33 +21,15 @@ Page({
   bindGetUserInfo(e) {
     var that = this
     if (e.detail.userInfo) {
-      var that = this;
-      //用户已经授权过
-      wx.login({
-        success(res) {
-          if (res.code) {
-            //发起网络请求
-            //使用 code 换取 openid 和 session_key 等信息
-            //发起网络请求
-            http.execute('wx/finishLogin', 'GET', {
-                code: res.code
-              },
-              res => {
-                console.log('登录成功，缓存当前用户并跳转到index' + res);
-                wx.setStorageSync('currentUser', res);
-                wx.switchTab({
-                  url: '/pages/index/index'
-                })
-              },
-              err => {})
-          } else {
-            console.log('登录失败！' + res.errMsg)
-          }
-        }
-      })
+      that.setData({show:false});
+      console.log('bindGetUserInfo1',e.detail.userInfo)
       app.globalData.userInfo = e.detail.userInfo;
-      console.log('app.globalData.userInfo',app.globalData.userInfo)
+      console.log('bindGetUserInfo5',app.globalData.userInfo)
+      wx.switchTab({
+        url: '/pages/index/index'
+      })
     } else {
+      console.log('bindGetUserInfo6',app.globalData.userInfo)
       that.setData({
         show: true
       })

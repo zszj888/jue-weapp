@@ -10,13 +10,12 @@
     "pages/roleDetails/roleDetails",
     "pages/taskDtails/taskDtails",
     "pages/allTask/allTask",
-    "pages/taskList/taskList",
     "pages/wallet/wallet",
     "pages/myMessage/myMessage",
     "pages/roleApply/roleApply",
-    "pages/agentApply/agentApply",
     "pages/serviceAgreement/serviceAgreement",
-    "pages/onlineServe/onlineServe"
+    "pages/onlineServe/onlineServe",
+    "pages/myrolelist/myrolelist"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -48,6 +47,10 @@
         "text": "我的"
       }
     ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
   },
   "sitemapLocation": "sitemap.json"
 }

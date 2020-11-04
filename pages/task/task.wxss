@@ -117,16 +117,11 @@ page {
   border-radius: 40rpx;
 }
 
-.view-left image {
-  width: 120rpx;
-  height: 120rpx;
-  border-radius: 50%;
-  margin-left: 32rpx;
-  margin-right: 38rpx;
-}
 
 .view-right {
   position: relative;
+  width: 80%;
+  margin-left: 50rpx;
 }
 
 .view-right-1 {
@@ -153,7 +148,7 @@ page {
 .collection {
   position: absolute;
   top: 50%;
-  right: -34px;
+  right: -1rpx;
   transform: translateY(-50%);
 }
 

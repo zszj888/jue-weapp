@@ -21,14 +21,6 @@
 					<van-icon style="width:150rpx" name="share" size="80rpx" color="#FDBD2F"/>
 				</button>
 			</view>
-            <!-- <view class="flex-items">
-				<image src="https://hll-panel-img-oss.oss-cn-shenzhen.aliyuncs.com/panel/bd/c6a48b40edc1a1892314568e49ec1df4.png"></image>
-				<view class="item-list">
-					<text class="title">任务xxx</text>
-					<text class="content">需求xxxxxx</text>
-				</view>
-              <van-icon style="width:150rpx" name="share" size="80rpx" color="#FDBD2F"/>
-			</view> -->
 		</view>
 	</view>
 </view>

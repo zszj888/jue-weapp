@@ -17,9 +17,6 @@
         <scroll-view scroll-y="true" style="height: {{scrollH}}px;"  bindscrolltolower="lower" lower-threshold="100">
           <view wx:if="{{roleList.length > 0}}">
             <view  wx:for="{{roleList}}" wx:key="id" wx:for-index="index" wx:for-item="item" bindtap="toDetails" data-item="{{item}}" class="scroll-view-item">
-              <view class="view-left">
-                <image src="{{item.img}}"></image>
-              </view>
               <view class="view-right">
                 <view class="view-right-1">{{item.name}}</view>
                 <view class="view-right-2">
@@ -31,7 +28,7 @@
               </view>
             </view>
           </view>
-          <view class="no-data" wx:if="{{roleList.length == 0}}">暂无数据</view>
+          <view class="no-data" wx:else>暂无数据</view>
         </scroll-view>
       </view>
   </view>

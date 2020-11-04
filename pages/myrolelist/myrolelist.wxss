@@ -1,0 +1,13 @@
+.content-box{
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+}
+.van-tabs__line{
+background-color: #FFBB34!important;
+}
+.van-cell__title{
+  text-align: left;
+}
+.van-radio{
+  margin-left: 35rpx;
+}

@@ -5,6 +5,23 @@ page {
   justify-content: flex-start;
 }
 
+.role-url {
+  color: #63CE92;
+  position: absolute;
+  left: 290rpx;
+}
+.button-btn {
+  margin-left: 200rpx;
+  width: 310rpx;
+  height: 36rpxpx;
+  font-size: 36rpx;
+  font-family: STHeitiSC-Medium, STHeitiSC;
+  font-weight: 500;
+  color: #FFFFFF;
+  background: #FDBD2F;
+  line-height: 42rpx;
+  border-radius: 38rpx;
+}
 .page-title{
   text-align: center;
   font-size: 42rpx;

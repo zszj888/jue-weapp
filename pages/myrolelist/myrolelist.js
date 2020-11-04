@@ -11,15 +11,25 @@ Page({
     list: []
   },
   onChange(event) {
-    console.log('task tab changed:',event.detail.name)
-    switch(event.detail.name){
-      case 0:http.fetchTaskList(0,'/task',this);break;
-      case 1:http.fetchTaskList(1,'/task',this);break;
-      case 2:http.fetchTaskList(2,'/task',this);break;
-      case 3:http.fetchTaskList(3,'/task',this);break;
-      case 4:http.fetchTaskList(4,'/task',this);break;
+    console.log('role tab changed:', event.detail.name)
+    switch (event.detail.name) {
+      case 0:
+        http.fetchTaskList(0, '/role', this);
+        break;
+      case 1:
+        http.fetchTaskList(1, '/role', this);
+        break;
+      case 2:
+        http.fetchTaskList(2, '/role', this);
+        break;
+        case 3:
+        http.fetchTaskList(3, '/role', this);
+        break;
+        case 4:
+        http.fetchTaskList(4, '/role', this);
+        break;
     }
-    },
+  },
   radioChange(event) {
     this.setData({
       radio: event.detail,
@@ -28,14 +38,14 @@ Page({
   add(e) {
     console.log(e)
   },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    http.fetchTaskList(0,'/task',this);
+    http.fetchTaskList(0, '/role', this);
   },
-  
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -47,13 +57,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
-},
 
-/**
- * 生命周期函数--监听页面隐藏
- */
-onHide: function () {
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
 
   },
 
@@ -86,10 +96,10 @@ onHide: function () {
   },
   toDetails(e) {
     var taskObj = e.currentTarget.dataset.item;
-    taskObj.showExt=true;
+    taskObj.showExt = true;
     console.log('toDetail', taskObj)
     wx.navigateTo({
-      'url': '/pages/taskDtails/taskDtails?task=' + JSON.stringify(taskObj)
+      'url': '/pages/roleDetails/roleDetails?query=' + JSON.stringify(taskObj)
     })
   }
 })

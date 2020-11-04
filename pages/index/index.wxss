@@ -174,7 +174,7 @@ page {
 .collection {
   position: absolute;
   top: 50%;
-  right: -34px;
+  right: -80rpx;
   transform: translateY(-50%);
 }
 
