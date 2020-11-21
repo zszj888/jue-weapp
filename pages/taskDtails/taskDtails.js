@@ -30,24 +30,38 @@ Page({
   },
   confirmPay(e) {
     //todo 小程序支付
+    var that = this;
     let taskid = e.currentTarget.dataset.taskid;
     let userid = e.currentTarget.dataset.userid;
-    http.execute('task/' + taskid + '/acceptBy/' + userid, 'GET', '', sucess => {
+    http.execute('task/' + taskid + '/acceptBy/' + userid, 'GET', '', suc => {
       console.log('currentTime', new Date())
-      wx.showToast({
-        title: '操作成功',
-        duration: 1000,
-        success: function () {
-          setTimeout(function () {
-            //要延时执行的代码
-            console.log('延时1秒后跳转', new Date());
-            wx.navigateBack({
-              delta: 1,
-            })
-          }, 1000) //延迟时间
-        }
-      })
-
+      if (suc.ret === 200) {
+        wx.requestPayment({
+          nonceStr: suc.data.WxNonceStr,
+          package: suc.data.package,
+          paySign: suc.data.paySign,
+          timeStamp: suc.data.timeStamp,
+          signType:'MD5',
+          success(res) {
+            console.log('success', res);
+            wx.showToast({
+              title: '支付成功，请耐心等待对方确认',
+              duration: 2000
+            });
+            //支付成功跳转到哪里？？？？
+          },
+          fail(res) {
+            console.log('fail', res)
+          }
+        })
+        that.data.disable = true;
+        that.setData(that.data);
+      }else{
+        wx.showToast({
+          title: suc.msg,
+          duration: 2000
+        });
+      }
     }, fail => {});
   },
   applyTask(e) {

@@ -5,29 +5,29 @@
 		<view class="role-content">
 			<view class="role-content-item">
 				<view class="role-label">任务名称 </view>
-				<view class="role-text"><input name="name" class="weui-input" placeholder="10个汉字以内" /></view>
+				<view class="role-text"><input name="name" class="weui-input" placeholder-class="input-placeholder" placeholder="10个汉字以内" /></view>
 			</view>
 			<view class="role-content-item">
 				<view class="role-label">任务介绍 </view>
-				<view class="role-text"><input name="desc" class="weui-input" placeholder="20个汉字以内" /></view>
+				<view class="role-text"><input name="desc" class="weui-input"  placeholder-class="input-placeholder" placeholder="20个汉字以内" /></view>
 			</view>
 			<view class="role-content-item" bindtap="picktime">
 				<view class="role-label">任务时间 </view>
 				<picker mode="multiSelector" value="{{dateTimeMinute}}" bindchange="changeDateTimeMinute"
 					bindcolumnchange="changeDateTimeMinuteColumn" range="{{dateTimeMinuteArray}}">
 					<view class="role-text">
-						<input name="taskTime" disabled="{{true}}" class="weui-input" placeholder="请选择任务时间"
+						<input name="taskTime" disabled="{{true}}" class="weui-input" placeholder-class="input-placeholder"  placeholder="请选择任务时间"
 							value="{{tasktime}}" />
 					</view>
 				</picker>
 			</view>
 			<view class="role-content-item">
 				<view class="role-label">任务地点 </view>
-				<view class="role-text"><input name="position" class="weui-input" placeholder="请输入" /></view>
+				<view class="role-text"><input name="position" class="weui-input"  placeholder-class="input-placeholder" placeholder="请输入" /></view>
 			</view>
 			<view class="role-content-item">
 				<view class="role-label">角色要求 </view>
-				<view class="role-text"><input name="skill" class="weui-input" placeholder="请输入" /></view>
+				<view class="role-text"><input name="skill" class="weui-input"  placeholder-class="input-placeholder" placeholder="请输入" /></view>
 			</view>
 			<view class="role-content-item">
 				<view class="role-label" style="width:250rpx">任务有效期限</view>

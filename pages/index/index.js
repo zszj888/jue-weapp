@@ -8,7 +8,7 @@ Page({
     show: true,
     scrollH: 0, 
     currentTabIndex:0,// 当前的tab下标
-    tabList:['演员', '主播', '网红', '配音演员', '特型演员'],
+    tabList:['演员', '主播', '网红', '配音', '特型','其它'],
     roleList:[
     ]
   },
@@ -144,6 +144,12 @@ Page({
   },
   onShow(){
     var that = this;
+    if (typeof that.getTabBar === 'function' &&
+    that.getTabBar()) {
+      that.getTabBar().setData({
+          selected: 0
+        })
+      }
     wx.getSystemInfo({
       success: res =>{
         let scrollH = res.windowHeight;

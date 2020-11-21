@@ -15,7 +15,12 @@
     "pages/roleApply/roleApply",
     "pages/serviceAgreement/serviceAgreement",
     "pages/onlineServe/onlineServe",
-    "pages/myrolelist/myrolelist"
+    "pages/myrolelist/myrolelist",
+    "pages/contract1/normalquestion",
+    "pages/contract2/merchant",
+    "pages/contract3/tuihuoshuoming",
+    "pages/contract4/shouhoufuwu",
+    "pages/contract5/contactus"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -25,8 +30,10 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "custom": true,
     "color": "#8a8a8a",
     "selectedColor": "#FDBD2F",
+    "backgroundColor": "#000000",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -46,11 +53,12 @@
         "selectedIconPath": "/images/tabBar/my-home-selected.png",
         "text": "我的"
       }
-    ]
-  },
-  "networkTimeout": {
-    "request": 10000,
-    "downloadFile": 10000
+    ],
+    "networkTimeout": {
+      "request": 10000,
+      "downloadFile": 10000
+    },
+    "sitemapLocation": "sitemap.json"
   },
   "sitemapLocation": "sitemap.json"
 }

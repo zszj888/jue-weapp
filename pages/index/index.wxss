@@ -8,8 +8,7 @@ page {
 }
 .page-title {
   text-align: center;
-  /* margin-top: 62rpx; */
-  font-size: 42rpx;
+  font-size: 30rpx;
   font-family: STHeitiSC-Medium, STHeitiSC;
   font-weight: 500;
   color: #000000;
@@ -75,7 +74,7 @@ page {
   box-sizing: border-box;
   margin-top: 24rpx;
   padding: 0 40rpx;
-  font-size: 28rpx;
+  font-size: 24rpx;
   font-family: STHeitiSC-Light, STHeitiSC;
   font-weight: 300;
   color: #FFFFFF;
@@ -131,7 +130,7 @@ page {
 }
 
 .view-right-1 {
-  font-size: 42rpx;
+  font-size: 28rpx;
   font-family: STHeitiSC-Light, STHeitiSC;
   font-weight: 300;
   color: #545454;
@@ -141,7 +140,7 @@ page {
 
 .view-right-2 {
   display: flex;
-  font-size: 32rpx;
+  font-size: 25rpx;
   line-height: 32rpx;
   font-family: STHeitiSC-Light, STHeitiSC;
   font-weight: 300;

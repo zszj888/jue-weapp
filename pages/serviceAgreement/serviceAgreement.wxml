@@ -1,4 +1,15 @@
 <view class="role-details-box">
-<import src ="../../components/header/header.wxml"/>
-<template is="msgItem" data="{{name:'我的收藏'}}"/>
+<!-- <import src ="../../components/header/header.wxml"/> -->
+<!-- <template is="msgItem" data="{{name:'平台服务协议'}}"/> -->
+<view class="my-list">
+    <view class="my-list-item" wx:for="{{myList}}" wx:key="index" data-item='{{item}}' bindtap="toPages">
+      <view class="list-item-left">
+        <!-- <image src="{{item.icon}}"></image> -->
+        <text class="item-text">{{ item.name }}</text>
+      </view>
+      <view class="list-item-right">
+        <image src="../../images/Path.png"></image>
+      </view>
+    </view>
+  </view>
 </view>

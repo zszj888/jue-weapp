@@ -5,7 +5,7 @@ const app = getApp()
 Page({
   data: {
     avatarUrl: './user-unlogin.png',
-    userInfo: {},
+    userInfo: null,
     logged: false,
     takeSession: false,
     requestResult: '',
@@ -63,12 +63,32 @@ Page({
   },
 
   onLoad: function () {
-    this.setData({
-      avatarUrl: app.globalData.userInfo.avatarUrl,
-      userInfo: app.globalData.userInfo
-    });
+    // 获取用户信息
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              this.setData({
+                avatarUrl: res.userInfo.avatarUrl,
+                userInfo: res.userInfo
+              })
+            }
+          })
+        }
+      }
+    })
+    
   },
   onShow: function () {
+    var that  = this;
+    if (typeof that.getTabBar === 'function' &&
+    that.getTabBar()) {
+      that.getTabBar().setData({
+          selected: 2
+        })
+      }
     wx.login({
       success(res) {
         if (res.code) {
@@ -146,7 +166,6 @@ Page({
   //   })
   // },
   toPages(e) {
-    // console.log(e)
     var path = e.currentTarget.dataset.item.path;
     // var menuFunc = {
     //   'task': '/pages/allTask/allTask', // 全部任务
@@ -159,21 +178,21 @@ Page({
     //   'agentApply': '/pages/agentApply/agentApply', // 经纪人申请
     //   'serviceAgreement': '/pages/serviceAgreement/serviceAgreement' // 平台协议
     // }
+    console.log('我的页面.userInfo:',this.data.userInfo);
     // 有授权就跳转，没有就提示授权
     if (this.data.userInfo) {
       wx.navigateTo({
         'url': path
       })
     } else {
-      console.log(22)
       wx.showModal({
         title: '提示',
-        content: '请先完善个人信息',
+        content: '请先完成授权',
         success(res) {
           if (res.confirm) {
             console.log('用户点击确定')
             wx.navigateTo({
-              url: '/pages/myInfo/myInfo',
+              url: '/pages/login/login',
             })
           } else if (res.cancel) {
             console.log('用户点击取消')

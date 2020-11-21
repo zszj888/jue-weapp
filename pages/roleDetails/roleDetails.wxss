@@ -10,11 +10,12 @@ page {
   position: absolute;
   left: 290rpx;
 }
+
 .button-btn {
   margin-left: 200rpx;
   width: 310rpx;
   height: 36rpxpx;
-  font-size: 36rpx;
+  font-size: 26rpx;
   font-family: STHeitiSC-Medium, STHeitiSC;
   font-weight: 500;
   color: #FFFFFF;
@@ -22,15 +23,17 @@ page {
   line-height: 42rpx;
   border-radius: 38rpx;
 }
-.page-title{
+
+.page-title {
   text-align: center;
-  font-size: 42rpx;
+  font-size: 30rpx;
   font-family: STHeitiSC-Medium, STHeitiSC;
   font-weight: 500;
   color: #000000;
   line-height: 44rpx;
 }
-.role-header .public-bac{
+
+.role-header .public-bac {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -39,7 +42,8 @@ page {
   z-index: -1;
   border-radius: 0px 0px 80rpx 80rpx;
 }
-.role-content{
+
+.role-content {
   width: 654rpx;
   height: 100%;
   background: #FFFFFF;
@@ -52,7 +56,8 @@ page {
   box-sizing: border-box;
   margin-bottom: 40rpx
 }
-.role-content-item{
+
+.role-content-item {
   width: 100%;
   height: 88rpx;
   border-bottom: 2px solid #D9D9D9;
@@ -61,57 +66,72 @@ page {
   display: flex;
   align-items: center;
 }
-.role-label,.role-label-1{
+
+.role-label,
+.role-label-1 {
   width: 144rpx;
-  font-size: 36rpx;
+  font-size: 28rpx;
   font-family: STHeitiSC-Medium, STHeitiSC;
   font-weight: 500;
   color: #666666;
   text-align: left;
   margin-right: 34rpx;
 }
-.role-text{
-  font-size: 36rpx;
+
+.role-text {
+  font-size: 26rpx;
   font-family: STHeitiSC-Medium, STHeitiSC;
   font-weight: 500;
   color: #B4B4B4;
 }
-.role-content-img{
+
+.role-content-img {
   border-bottom: 2px solid #D9D9D9;
 }
+
 .role-content-img,
-.role-content-video{
+.role-content-video {
   width: 100%;
   height: 258rpx;
   padding: 22rpx 48rpx;
   box-sizing: border-box;
   font-size: 0;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
-.role-label-1,.role-box{
+
+.role-label-1,
+.role-box {
   display: inline-block;
   vertical-align: top;
 }
-.role-box{
-  width: 386rpx;
+
+.role-box {
+  padding-top: 20rpx;
+  width: auto;
   height: 100%;
   /* background: #ECECEC; */
   font-size: 0;
 }
-.img-box{
+
+.img-box {
   margin-right: 20rpx;
   display: inline-block;
   vertical-align: middle;
 }
-.img{
+
+.img {
   width: 175rpx;
   height: 200rpx;
   border-radius: 10rpx;
 }
-.btn-box{
+
+.btn-box {
   margin-top: 24rpx;
 }
-.btn{
+
+.btn {
   width: 290rpx;
   height: 76rpx;
   line-height: 76rpx;
@@ -119,8 +139,21 @@ page {
   background: #FDBD2F;
   border-radius: 38rpx;
   margin: 0 auto;
-  font-size: 36rpx;
+  font-size: 26rpx;
   font-family: STHeitiSC-Medium, STHeitiSC;
   font-weight: 500;
   color: #FFFFFF;
+}
+
+.tab-item {
+  padding: 2px 18rpx;
+  box-sizing: border-box;
+  box-shadow: 0px 8rpx 80rpx 0rpx rgba(0, 0, 0, 0.05);
+  border-radius: 44rpx;
+  border: 2rpx solid #ffffff;
+}
+
+.active-tab {
+  border: 2rpx solid #d6a86c;
+  color: #D68E30
 }

@@ -10,62 +10,75 @@
       <view class="role-content-item">
         <view class="role-label">姓名</view>
         <view class="role-text">
-          <input name="name" class="weui-input" placeholder="请输入姓名"  disabled="{{disable}}" value="{{queryData.name}}" />
+          <input name="name" class="weui-input" placeholder="请输入姓名" disabled="{{disable}}" value="{{queryData.name}}" />
         </view>
       </view>
       <view class="role-content-item">
-				<view class="role-label">性别 </view>
-				<view class="role-text">
+        <view class="role-label">性别 </view>
+        <view class="role-text">
 
-					<radio-group bindchange="radioChange">
-						<radio value="man"  disabled="{{disable}}" checked="{{sex=='man'}}"/>男	
-						<radio value="woman"  disabled="{{disable}}" checked="{{sex=='woman'}}"/>女
-					</radio-group>
-					</view> 
+          <radio-group bindchange="radioChange">
+            <radio value="man" disabled="{{disable}}" checked="{{sex=='man'}}" />男
+            <radio value="woman" disabled="{{disable}}" checked="{{sex=='woman'}}" />女
+          </radio-group>
+        </view>
       </view>
-      
+
       <view class="role-content-item">
         <view class="role-label">年龄</view>
         <view class="role-text">
-          <input name="age" class="weui-input"  disabled="{{disable}}" placeholder="请输入年龄" value="{{queryData.age}}" />
+          <input name="age" class="weui-input" disabled="{{disable}}" placeholder="请输入年龄" value="{{queryData.age}}" />
         </view>
       </view>
       <view class="role-content-item">
         <view class="role-label">身高(CM)</view>
-        <view class="role-text"><input name="height"  disabled="{{disable}}" class="weui-input" placeholder="请输入身高"
+        <view class="role-text"><input name="height" disabled="{{disable}}" class="weui-input" placeholder="请输入身高"
             value="{{queryData.height}}" /></view>
       </view>
       <view class="role-content-item">
         <view class="role-label">体重(KG)</view>
-        <view class="role-text"><input name="weight" class="weui-input"  disabled="{{disable}}" placeholder="请输入体重"
+        <view class="role-text"><input name="weight" class="weui-input" disabled="{{disable}}" placeholder="请输入体重"
             value="{{queryData.weight}}" /></view>
       </view>
       <view class="role-content-item">
         <view class="role-label">才艺</view>
-        <view class="role-text"><input name="skill" class="weui-input" disabled="{{disable}}"  placeholder="请输入简短描述"
+        <view class="role-text"><input name="skill" class="weui-input" disabled="{{disable}}" placeholder="请输入简短描述"
             value="{{queryData.skill}}" /></view>
       </view>
+
+      <view wx:if="{{!queryData.id}}" class="role-content-item">
+        <view class="role-label">标签</view>
+        <view class="role-text">
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{tabList}}">
+            {{tag}}
+          </picker>
+        </view>
+      </view>
+
       <view class="role-content-item">
         <view class="role-label">出演信息</view>
-        <view class="role-text"><input name="showInfo"  disabled="{{disable}}" class="weui-input" placeholder="请输入出演信息"
+        <view class="role-text"><input name="showInfo" disabled="{{disable}}" class="weui-input" placeholder="请输入出演信息"
             value="{{queryData.showInfo}}" /></view>
       </view>
       <view class="role-content-item">
         <view class="role-label" style="width:auto">演出费总计(RMB）</view>
-        <view class="role-text"><input name="fee" disabled="{{disable}}"  class="weui-input" placeholder="请输入纯数字金额" value="{{queryData.fee}}" />
+        <view class="role-text"><input name="fee" disabled="{{disable}}" class="weui-input" placeholder="请输入纯数字金额"
+            value="{{queryData.fee}}" />
         </view>
       </view>
       <view class="role-content-img">
         <view class="role-label-1">个人图片</view>
         <view class="role-box">
-          <view wx:for="{{queryData.imgList}}" wx:key='index' class="img-box">
-            <image src='{{item}}' bindtap='previewImage' data-src='{{item}}' class='img'></image>
-          </view>
+          <van-uploader max-count="{{!queryData.id ? 3 : maxCountPic}}"  deletable="{{ !queryData.id }}"
+            file-list="{{ fileList }}" bind:after-read="afterReadPic" />
         </view>
       </view>
       <view class="role-content-video">
         <view class="role-label-1">短视频</view>
-        <view class="role-box">短视频</view>
+        <view class="role-box">
+          <van-uploader max-count="{{!queryData.id ? 1 : axCountVideo}}" deletable="{{ !queryData.id }}" file-list="{{ video }}"
+            bind:after-read="afterReadVideo" />
+        </view>
       </view>
       <input hidden="true" name="createById" value="{{userid}}" />
 
@@ -82,18 +95,17 @@
         <button class="btn" data-roleid="{{queryData.id}}" disabled="{{true}}">{{queryData.status}}</button>
       </view>
 
-
       <view wx:elif="{{queryData.status == '待确认' && queryData.showExt}}">
         <view class="role-content-item" wx:for="{{applyList}}" wx:key="*this">
           <view class="role-label">参与人</view>
           <view class="role-url" bindtap="toUserDetail" data-userid="{{item}}">查看</view>
-          <button class="button-btn" disabled="{{disable}}" data-userid="{{item}}" bindtap="confirmApply"
+          <button class="button-btn" data-userid="{{item}}" bindtap="confirmApply"
             data-roleid="{{queryData.id}}">确认被征用</button>
         </view>
       </view>
       <view class="btn-box"
         wx:elif="{{(queryData.status == '已发布' || queryData.status == '待确认') && queryData.createById != userid}}">
-        <button class="btn" bindtap="applyRole" data-roleid="{{queryData.id}}" disabled="{{false}}">征用</button>
+        <button class="btn" bindtap="applyRole" data-roleid="{{queryData.id}}" disabled="{{false}}">征用并预付款</button>
       </view>
       <view class="btn-box"
         wx:elif="{{(queryData.status == '已发布' || queryData.status == '待确认') && queryData.createById == userid }}">

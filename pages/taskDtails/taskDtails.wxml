@@ -56,11 +56,11 @@
 		<view class="button-box" wx:elif="{{task.status == '进行中'}}">
 			<button class="button-btn" disabled="{{true}}">进行中</button>
 		</view>
-		<view wx:elif="{{task.status == '待确认' && task.showExt}}">
+		<view wx:elif="{{(task.status == '已发布' ||task.status == '待确认') && task.showExt}}">
 			<view class="role-content-item" wx:for="{{applyList}}" wx:key="*this">
 				<view class="role-label">参与人</view>
 				<view class="role-url" bindtap="toUserDetail" data-userid="{{item}}">查看</view>
-				<button class="button-btn" disabled="{{disable}}" data-userid="{{item}}" bindtap="confirmPay"
+				<button class="button-btn" data-userid="{{item}}" bindtap="confirmPay"
 					data-taskid="{{task.id}}">征用并付款</button>
 			</view>
 		</view>

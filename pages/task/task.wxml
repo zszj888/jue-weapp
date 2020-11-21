@@ -13,7 +13,7 @@
     </view>
   </view>
   <view class="role-list">
-    <view class="page-section-spacing">
+    <view >
         <scroll-view scroll-y="true" style="height: {{scrollH}}px;"  bindscrolltolower="lower" lower-threshold="100">
           <view wx:if="{{roleList.length > 0}}">
             <view  wx:for="{{roleList}}" wx:key="id" wx:for-index="index" wx:for-item="item" bindtap="toDetails" data-item="{{item}}" class="scroll-view-item">

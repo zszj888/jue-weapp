@@ -18,6 +18,13 @@ Page({
   //   this.data.keyword = e.detail.value;
   // },
   onShow() { 
+    var that  = this;
+    if (typeof that.getTabBar === 'function' &&
+    that.getTabBar()) {
+      that.getTabBar().setData({
+          selected: 1
+        })
+      }
     wx.getSystemInfo({
       success: res => {
         let scrollH = res.windowHeight;
@@ -26,7 +33,7 @@ Page({
         });
       }
     });
-    var that  = this;
+    
     var params = {
       name: that.data.keyword
     };

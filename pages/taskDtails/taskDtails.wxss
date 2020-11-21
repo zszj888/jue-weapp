@@ -42,7 +42,7 @@ page {
 
 .role-text {
   margin-left: 20rpx;
-  font-size: 36rpx;
+  font-size: 26rpx;
   font-family: STHeitiSC-Medium, STHeitiSC;
   font-weight: 500;
   color: #B4B4B4;
@@ -96,12 +96,18 @@ page {
 .btn-box {
   margin-top: 24rpx;
 }
-
+.role-label{
+  color: #666666;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .button-btn {
   margin-left: 250rpx;
   width: 240rpx;
   height: 36rpxpx;
-  font-size: 36rpx;
+  font-size: 26rpx;
   font-family: STHeitiSC-Medium, STHeitiSC;
   font-weight: 500;
   color: #FFFFFF;

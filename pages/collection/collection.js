@@ -106,7 +106,7 @@ Page({
       return {
         title: "我收藏的角儿",
         path:`pages/collection/collection?url=${url}`,
-        imageUrl :'http://127.0.0.1:8888/cool.jpg'
+        imageUrl :'https://www.13cyw.com/cool.jpg'
       }
     }
   }
